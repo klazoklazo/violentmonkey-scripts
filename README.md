@@ -1,7 +1,7 @@
 # violentmonkey-scripts
 collection of various scripts i use to browse the internet with. all built with and only tested for violentmonkey, but might still work with other userscript extensions
 
-to install, simply click on the link below for the desired userscript, and follow your specific userscript extensions instructions
+to install, first make sure your userscript extension is already installed, and simply click on the link below for the desired userscript. then follow your specific userscript extensions instructions
 
 ## furaffinity.net
 
