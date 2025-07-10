@@ -4,7 +4,7 @@
 // @match       *://www.furaffinity.net/msg/submissions*
 // @match       *://www.furaffinity.net/msg/others*
 // @grant       none
-// @version     2.0
+// @version     2.1
 // @author      klazo
 // @description jankily combines both notification pages by loading one inside another
 // ==/UserScript==
@@ -49,6 +49,13 @@ if (window.top == window.self) {
         }
       });
       heightObserver.observe(notificationsOthersInside);
+
+      // make sure all links within iframe redirect window parent as opposed to just in the iframe
+      var iframeLinks = Array.from(notificationsOthers.contentWindow.document.getElementsByTagName("a"));
+      console.log(iframeLinks);
+      iframeLinks.forEach(function(iframeLink) {
+        iframeLink.setAttribute("target", "_parent");
+      });
     };
   }
 }
