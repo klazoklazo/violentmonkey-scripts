@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.furaffinity.net/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      klazo
 // @description script that hides the default banner in furaffinity pages while leaving profile banners intact
 // ==/UserScript==
@@ -19,23 +19,25 @@ const subdomainIndex = 28;
 function checkValid(domain, subdomains) {
   for (let subdomain of subdomains) {
     if (domain.indexOf(subdomain) == subdomainIndex) {
-      // check again if userpage doesnt have a profile banner
-      if (!!document.querySelector(".banner-justify-center")) {
-        return true;
-      }
+      // check if subdomain is a profile subdomain
+      return true;
     }
   }
+  // return false if elsewhere on furaffinity
   return false;
 }
 
 // main behavior
 if (checkValid(document.URL, userpageSubdomains)) {
-  // a userpage without a profile banner
-  // remove banner then create empty space for userpage to clip into
-  document.querySelector(".banner-justify-center").remove();
-  document.getElementById("header").style.height = '59px';
+  // check again if userpage doesnt have a profile banner
+  if (!!document.querySelector(".banner-justify-center")) {
+    // a userpage without a profile banner
+    // remove banner then create empty space for userpage to clip into
+    document.querySelector(".banner-justify-center").remove();
+    document.getElementById("header").style.height = '59px';
+  }
 } else {
-  // not a userpage or a userpage with a profile banner
+  // not a userpage
   // simple removal of banner
   document.querySelector(".banner-justify-center").remove();
 }
