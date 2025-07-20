@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.furaffinity.net/*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      klazo
 // @description script that hides the default banner in furaffinity pages while leaving profile banners intact
 // ==/UserScript==
