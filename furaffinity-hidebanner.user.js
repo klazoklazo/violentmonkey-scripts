@@ -30,14 +30,14 @@ function checkValid(domain, subdomains) {
 // main behavior
 if (checkValid(document.URL, userpageSubdomains)) {
   // check again if userpage doesnt have a profile banner
-  if (!!document.querySelector(".banner-justify-center")) {
+  if (document.querySelector("site-banner").querySelector("img").alt != "Profile Banner image") {
     // a userpage without a profile banner
     // remove banner then create empty space for userpage to clip into
-    document.querySelector(".banner-justify-center").remove();
+    document.querySelector("site-banner").remove();
     document.getElementById("header").style.height = '59px';
   }
 } else {
   // not a userpage
   // simple removal of banner
-  document.querySelector(".banner-justify-center").remove();
+  document.querySelector("site-banner").remove();
 }
