@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.furaffinity.net/*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      klazo
 // @description script that hides the default banner in furaffinity pages while leaving profile banners intact
 // ==/UserScript==
@@ -11,7 +11,7 @@
 // list of subdomains to invoke alternate behavior with
 // userpage subdomains in furaffinity cause the users navbar to clip into the sitewide navbar
 // if the user does not have their own custom profile banner
-const userpageSubdomains = ["user", "gallery", "scraps", "favorites", "journals"];
+const userpageSubdomains = ["user", "gallery", "scraps", "favorites", "journals", "journal"];
 // identifiable userpage subdomain bit is always immediately after the domain
 const subdomainIndex = 28;
 
