@@ -13,10 +13,10 @@ to install, first make sure your userscript extension is already installed, and 
 
 > script that hides the default banner in furaffinity pages while leaving profile banners intact
 
-[search sidebar to header](https://github.com/klazoklazo/violentmonkey-scripts/blob/main/furaffinity-searchheader.user.js)
+[search sidebar to header](https://github.com/klazoklazo/violentmonkey-scripts/raw/refs/heads/main/furaffinity-searchheader.user.js)
 
 > script that reformats the advanced search settings from a sidebar to a headerbar
 
-[unify notification pages](https://github.com/klazoklazo/violentmonkey-scripts/blob/main/furaffinity-hidebanner.user.js)
+[unify notification pages](https://github.com/klazoklazo/violentmonkey-scripts/raw/refs/heads/main/furaffinity-unifynotifications.user.js)
 
 > jankily combines both notification pages by loading one inside another
