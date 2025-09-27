@@ -4,7 +4,7 @@
 // @match       *://www.furaffinity.net/msg/submissions*
 // @match       *://www.furaffinity.net/msg/others*
 // @grant       none
-// @version     2.1
+// @version     2.2
 // @author      klazo
 // @description jankily combines both notification pages by loading one inside another
 // ==/UserScript==
@@ -38,6 +38,8 @@ if (window.top == window.self) {
       notificationsOthers.contentWindow.document.getElementById("footer").remove();
       // remove sidebar for consistency and to stop the user from getting lost
       notificationsOthers.contentWindow.document.querySelector(".sidebar").remove();
+      notificationsOthers.contentWindow.document.querySelector(".mobile-navigation").remove();
+      notificationsOthers.contentWindow.document.querySelector(".mobile-notification-bar").remove();
 
       // prevent unnecessary scrolling in appended notifications
       var notificationsOthersInside = notificationsOthers.contentWindow.document.getElementById("main-window");
