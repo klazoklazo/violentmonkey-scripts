@@ -4,7 +4,7 @@
 // @match       *://www.furaffinity.net/msg/submissions*
 // @match       *://www.furaffinity.net/msg/others*
 // @grant       none
-// @version     2.2
+// @version     2.3
 // @author      klazo
 // @description jankily combines both notification pages by loading one inside another
 // ==/UserScript==
@@ -40,6 +40,8 @@ if (window.top == window.self) {
       notificationsOthers.contentWindow.document.querySelector(".sidebar").remove();
       notificationsOthers.contentWindow.document.querySelector(".mobile-navigation").remove();
       notificationsOthers.contentWindow.document.querySelector(".mobile-notification-bar").remove();
+      // remove redundant admin notices
+      notificationsOthers.contentWindow.document.getElementById("admin_notice_do_not_adblock2").remove();
 
       // prevent unnecessary scrolling in appended notifications
       var notificationsOthersInside = notificationsOthers.contentWindow.document.getElementById("main-window");
